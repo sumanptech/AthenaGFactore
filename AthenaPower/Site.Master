@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="AthenaPower.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - G-Factor</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />  
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <%--<asp:ScriptReference Name="G-Factor.js" Assembly="System.Web" Path="~/Scripts/Javascript/G-Factor.js" />--%>
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="container body-content">
+            
+            <div class="banner-image">
+                <div class="banner-text" style="background-color: darkseagreen; background-image: url('Content/Images/go-green-banner.jpg')">
+                    <h1>What is your Green-Factor</h1>
+                    <p>Contrbute your bit for Green Earth</p>
+                    <br />
+                    <br />
+                    <br />
+                     <br />
+                    <br />
+                    <br />
+                    <%--<button>Hire me</button>--%>
+                </div>
+            </div>
+          <%--  <b>
+                <span style="font-style:italic">
+                                    Welcome to GFactorConsumer
+                                </span>
+            </b>--%>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - G-Factor</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+
+  
+</html>
